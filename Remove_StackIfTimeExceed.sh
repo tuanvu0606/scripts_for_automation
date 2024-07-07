@@ -17,5 +17,6 @@ for stack in $(docker stack ls --format '{{.Name}}' | awk 'length($0) == 6'); do
     docker stack rm $stack
   else
     echo "the running time for $stack is $STACK_RUNNING_TIME which is lower than $DOCKER_SWARM_STACK_TIME_LIMIT"
+    echo "doing nothing..."
   fi
 done
